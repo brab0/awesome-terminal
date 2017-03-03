@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/brab0/awesome-terminal/issues"
   },
-  "homepage": "https://github.com/brab0/awesome-terminal#readme"
+  "homepage": "https://github.com/brab0/awesome-terminal#readme",
+  "dependencies": {
+    "node-cmd": "^2.0.0"
+  }
 }
