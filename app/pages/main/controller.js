@@ -2,10 +2,11 @@
   'use strict'
 
   let terminal = require('node-cmd');
+  
   let exec = function(cmd){
     return new Promise(
       function(resolve, reject) {
-        return terminal.get(cmd,
+        terminal.get(cmd,
           function(res){
             resolve(res);
           });
@@ -22,12 +23,14 @@
 
           $scope.send = function(e){
             if (e.keyCode == 13) {
-              exec("ls").then(function(res){
-                console.log(res);
-                e.target.value = res;
-                $scope.cmdOut.push(res);
+
+              exec($scope.cmd).then(function(data){
+                $scope.$apply(function () {
+                  $scope.cmdOut.push(data);
+                });
               });
-              // $scope.cmd = "";
+
+              $scope.cmd = "";
               e.target.focus = true;
             }
           };
