@@ -1,0 +1,21 @@
+<div layout="column">
+  <div flex="80">
+    <div layout="row" layout-padding>
+      <div id="list" flex>
+        {{cmd}}
+      </div>
+      <div id="canvas" flex>
+        <p ng-repeat="out in cmdOut track by $index" ng-bind="out"></p>
+      </div>
+    </div>
+  </div>
+  <div flex="20" layout-padding style="background: #fafafa">
+    <div layout="row" layout-align="bottom center">
+      <textarea autofocus rows="2"
+        ng-model="cmd"
+        ng-keyup="send($event)"
+        style="padding: 6px 10px"
+        flex></textarea>
+    </div>
+  </div>
+</div>

@@ -2,10 +2,9 @@
   'use strinct'
 
   angular.module("AwesomeTerminal")
-    .controller("MainCtrl", [
+    .controller("TemplateCtrl", [
       "$scope",
       "settings",
       function($scope, settings){
-        $scope.greets = "Hello, Mr. brab0!";
       }]);
 })();
